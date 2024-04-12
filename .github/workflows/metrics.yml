@@ -53,4 +53,5 @@ jobs:
           base: ""
           plugin_followup: yes
           plugin_followup_indepth: yes
+          plugin_followup_sections: repositories, user
           plugin_languages: yes
