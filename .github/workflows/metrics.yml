@@ -19,16 +19,7 @@ jobs:
           filename: metrics.svg
           template: classic
           base: header, repositories, activity, community
-          config_order: base.header, base.repositories, base.activity+community, followup, habits, languages
+          config_order: base.header, base.repositories, base.activity+community, followup, languages
 
           plugin_followup: yes
-          plugin_followup_sections: repositories, user
-
-          plugin_habits: yes
-          plugin_habits_facts: no
-          plugin_habits_from: 1000
-          plugin_habits_days: 30
-          plugin_habits_charts: yes
-          plugin_habits_trim: yes
-
           plugin_languages: yes
