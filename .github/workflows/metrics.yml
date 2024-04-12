@@ -18,6 +18,7 @@ jobs:
           filename: header.svg
           template: classic
           base: header, repositories, activity, community
+          config_order: base.header, base.repositories
   habits:
     runs-on: ubuntu-latest
     environment:
