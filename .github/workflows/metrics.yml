@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
   push: {branches: ["main"]}
 jobs:
-  github-metrics:
+  header:
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: prod
     permissions:
       contents: write
@@ -14,7 +14,42 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+          config_timezone: ${{ secrets.USER_TIMEZONE }}
           filename: header.svg
           template: classic
           base: header
+  habits:
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
           config_timezone: ${{ secrets.USER_TIMEZONE }}
+          filename: habits.svg
+          base: ""
+          template: classic
+          plugin_habits: yes
+          plugin_habits_from: 200       # Use 200 events to compute habits
+          plugin_habits_days: 14        # Keep only events from last 14 days
+          plugin_habits_charts: yes     # Display charts section
+          plugin_habits_trim: yes       # Trim unused hours on daily chart
+  issue_pr_lang:
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          config_timezone: ${{ secrets.USER_TIMEZONE }}
+          filename: issue_pr_lang.svg
+          template: classic
+          base: ""
+          plugin_followup: yes
+          plugin_languages: yes
