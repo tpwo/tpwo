@@ -1,5 +1,5 @@
-<p align="center">
+<p align="left">
   <a href="https://github.com/tpwo">
-    <img width="55%" src="./metrics.svg" />
+    <img width="50%" src="./metrics.svg" />
   </a>
 </p>
