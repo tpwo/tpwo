@@ -19,7 +19,7 @@ jobs:
           filename: metrics.svg
           template: classic
           base: header, repositories, activity, community
-          config_order: base.header, base.repositories, base.activity+community, followup, languages
+          config_order: base.header, base.repositories, base.activity+community, languages
 
           plugin_followup: yes
           plugin_languages: yes
