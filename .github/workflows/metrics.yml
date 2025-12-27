@@ -26,4 +26,4 @@ jobs:
           
           repositories_skipped: tpwo.github.io
           plugin_languages_ignored: >-
-            html, css, dockerfile, makefile
+            html, css, dockerfile, makefile, justfile
